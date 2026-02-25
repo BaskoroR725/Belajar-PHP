@@ -11,5 +11,25 @@
  */
 
 // Tulis jawabanmu di bawah sini:
+echo "Nomor 1.\n";
+$umur=31;
+
+echo "Nomor 2. Umur saya $umur tahun.\n";
+if($umur < 13){
+  echo"Anak-anak\n";
+}elseif($umur <= 19){
+  echo"Remaja\n";
+}elseif($umur > 20){
+  echo"Dewasa\n";
+};
+
+echo "Nomor 3.\n";
+for($i=1;$i<=10;$i++){
+  if($i%2==1){
+    echo "$i\n";
+  }
+}
+
+
 
 ?>
