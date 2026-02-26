@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS crud_php_day10;
+USE crud_php_day10;
+
+CREATE TABLE IF NOT EXISTS barang (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_barang VARCHAR(100) NOT NULL,
+    harga INT NOT NULL,
+    stok INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

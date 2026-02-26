@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS mini_crud_php;
+USE mini_crud_php;
+
+CREATE TABLE IF NOT EXISTS produk (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_produk VARCHAR(100) NOT NULL,
+    harga INT NOT NULL,
+    stok INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
