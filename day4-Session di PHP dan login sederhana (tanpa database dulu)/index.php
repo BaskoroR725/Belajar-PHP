@@ -8,14 +8,21 @@ if (isset($_SESSION['username'])) {
     exit;
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = trim($_POST['password'] ?? '');
 
     if ($username === '' || $password === '') {
         $error = 'Username dan password wajib diisi.';
-    } elseif ($username === 'admin' && $password === '12345') {
+
+    } elseif($username === ''){
+        $error = 'Username wajib diisi.';
+    } elseif($password === ''){
+        $error = 'Password wajib diisi.';
+    }elseif ($username === 'Baskoro' && $password === 'phpexpert') {
         $_SESSION['username'] = $username;
+        $_SESSION['login_time'] = date('Y-m-d H:i:s');
         header('Location: dashboard.php');
         exit;
     } else {
@@ -35,8 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p>Gunakan akun demo: <strong>admin / 12345</strong></p>
 
     <?php if ($error !== ''): ?>
-        <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+        <p style="color: red;"><?= htmlspecialchars($error) ?>Something wrong!!!</p>
     <?php endif; ?>
+
+    
 
     <form method="POST" action="">
         <label for="username">Username:</label><br>
