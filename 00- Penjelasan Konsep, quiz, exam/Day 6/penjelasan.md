@@ -1,6 +1,6 @@
 # Day 6: PHP & MySQL (Database Dasar)
 
-Setelah menguasai Session di Day 4, hari ini kita akan masuk ke bagian paling krusial: **Interaksi dengan Database**.
+Setelah menguasai Session di Day 5, hari ini kita akan masuk ke bagian paling krusial: **Interaksi dengan Database**.
 
 ## 1. Apa itu MySQL?
 
