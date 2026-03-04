@@ -2,7 +2,7 @@
 session_start();
 require_once 'connection.php';
 
-// Flash messages from Session
+// Flash messages from Session, agar tersimpan disession dan tidak hilang saat refresh
 $success = $_SESSION['success'] ?? '';
 $error = $_SESSION['error'] ?? '';
 unset($_SESSION['success'], $_SESSION['error']);
@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($nama === '' || $pesan === '') {
     $_SESSION['error'] = 'Mohon lengkapi semua data. Nama dan pesan wajib diisi.';
+    //redirect ke index agar tidak tersubmit 2x
     header('Location: index.php');
     exit;
   } else {
