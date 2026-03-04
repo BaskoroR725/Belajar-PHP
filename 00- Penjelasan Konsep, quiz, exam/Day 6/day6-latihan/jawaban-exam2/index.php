@@ -94,7 +94,7 @@ try {
    </form>
 
    <h2>Daftar Pesan</h2>
-   <?php if (empty($rows)): ?>
+   <?php if (empty($row_data)): ?>
       <p>Belum ada pesan.</p>
    <?php else: ?>
       <table>
@@ -107,7 +107,7 @@ try {
             </tr>
          </thead>
          <tbody>
-            <?php foreach ($rows as $row): ?>
+            <?php foreach ($row_data as $row): ?>
                <tr>
                   <td><?= htmlspecialchars((string)$row['id']) ?></td>
                   <td><?= date('d/m/Y H:i', strtotime($row['waktu_kirim'])) ?></td>
